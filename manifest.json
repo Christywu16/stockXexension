@@ -1,0 +1,27 @@
+
+{
+    "name": "StockX Payout Calculator",
+    "description": "Calculate your payout on StockX listings",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": ["activeTab", "tabs"],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "favicon-16x16.png",
+        "48": "icon-48x48.png",
+        "128": "icon-120x120.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://stockx.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    }
+  }
+  
