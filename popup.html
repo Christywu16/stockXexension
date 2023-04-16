@@ -9,9 +9,22 @@
   <body>
     <h1>StockX Payout Calculator</h1>
     <p id="result">Click the button to calculate the payout for the current item</p>
-    <button id="calculate-payout">Calculate Payout</button>
+    <!-- <button id="calculate-payout">Calculate Payout</button> -->
     <!-- <script src="popup.js"></script> -->
     <script src="popup.js"></script>
+    <div>
+      <label for="sellerLevel">Select your seller level:</label>
+      <select id="sellerLevel" name="sellerLevel">
+        <option value="0.095">Level 1 (9.5% seller fee)</option>
+        <option value="0.09">Level 2 (9% seller fee)</option>
+        <option value="0.085">Level 3 (8.5% seller fee)</option>
+        <option value="0.08">Level 4 (8% seller fee)</option>
+      </select>
+    </div>
+    <div>
+      <button id="calculatePayoutBtn">Calculate Payout</button>
+    </div>
+    <div id="payouts"></div>
   </body>
 </html>
 
