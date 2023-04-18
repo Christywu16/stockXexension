@@ -1,27 +1,36 @@
-
 {
-    "name": "StockX Payout Calculator",
-    "description": "Calculate your payout on StockX listings",
-    "version": "1.0",
-    "manifest_version": 2,
-    "permissions": ["activeTab", "tabs"],
-    "browser_action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "favicon-16x16.png",
-        "48": "icon-48x48.png",
-        "128": "icon-120x120.png"
-      }
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://stockx.com/*"],
-        "js": ["content.js"]
-      }
-    ],
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
+  "manifest_version": 2,
+  "name": "Stockx Payout Checker",
+  "version": "1.0",
+  "description": "A Chrome extension that calculates the payout for items on stockx.com",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "https://*.stockx.com/*",
+    "activeTab", 
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.stockx.com/*"
+      ],
+      "js": [
+        "content.js",
+        "jquery-3.6.0.min.js"
+      ]
     }
-  }
-  
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Stockx Payout Checker"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["popup.html", "popup.js", "style.css"]
+}
